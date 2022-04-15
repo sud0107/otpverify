@@ -16,8 +16,8 @@ var transpoter = nodemailer.createTransport({
     secure: false,
     auth: {
         type: "login",
-        user: "jhaamrit08@gmail.com",
-        pass: "murlimanoharknj@140107"
+        user: process.env.EMAIL,
+        pass: process.env.PASS
     },
     tls: {
         rejectUnauthorized: false
@@ -47,7 +47,7 @@ router.post("/signup", async (req, res) => {
         from: `"Verify your email" <jhaamrit08@gmail.com>`,
         to: "jhasudhanshu08@gmail.com",
         subject: "Verify your email right now !!",
-        html: "<b>Your email has been verified !! Second time</b>"
+        html: "<b>Your email has been verified !! third time</b>"
     }
 
     transpoter.sendMail(mailOption, (err, result) => {
